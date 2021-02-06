@@ -1,0 +1,45 @@
+{
+  "name": "plagiarism_detector_server",
+  "version": "3.0.0",
+  "description": "Server project for Team 11 plagiarism detector",
+  "main": "index.ts",
+  "scripts": {
+    "start": "nodemon src/index.ts",
+    "build:dev": "tsc --watch --preserveWatchOutput",
+    "dev": "concurrently \"npm:build:dev\" \"npm:start:dev\"",
+    "test": "nyc --reporter=json-summary --reporter=text mocha --require ts-node/register tests/*.spec.ts",
+    "run": "tsc && node dist/index.js",
+    "pack": "npm-pack-zip"
+  },
+  "author": "Team 11",
+  "license": "ISC",
+  "dependencies": {
+    "@babel/core": "^7.12.3",
+    "@babel/traverse": "^7.12.5",
+    "@types/babel__traverse": "^7.0.15",
+    "@types/chai": "^4.2.11",
+    "@types/express": "^4.17.9",
+    "@types/express-fileupload": "^1.1.5",
+    "@types/mocha": "^7.0.2",
+    "@types/node": "^14.14.7",
+    "chai": "^4.2.0",
+    "concurrently": "^5.3.0",
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "express-fileupload": "^1.2.0",
+    "fs": "0.0.1-security",
+    "mocha": "^8.0.1",
+    "nodemon": "^2.0.6",
+    "npm-pack-zip": "^1.2.7",
+    "pdfkit": "^0.11.0",
+    "ts-mocha": "^7.0.0",
+    "tstraverse": "^0.2.0",
+    "typescript": "^3.9.6",
+    "unzip-stream": "^0.3.1"
+  },
+  "keywords": [],
+  "devDependencies": {
+    "@types/pdfkit": "^0.10.6",
+    "nyc": "^15.1.0"
+  }
+}
